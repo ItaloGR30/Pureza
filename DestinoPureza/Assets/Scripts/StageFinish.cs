@@ -3,7 +3,9 @@ using UnityEngine;
 public class StageFinish : MonoBehaviour
 {
     [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private GameObject gameCompletePanel;
     [SerializeField] private int stageNumber = 1;
+    [SerializeField] private int totalStages = 7;
 
     private bool finished = false;
 
@@ -18,13 +20,17 @@ public class StageFinish : MonoBehaviour
 
             Debug.Log("Fase concluída!");
 
-            // Desbloqueia a próxima fase
             StageProgress.UnlockNextStage(stageNumber);
 
-            // Mostra a tela de vitória
-            if (victoryPanel != null)
+            if (stageNumber >= totalStages)
             {
-                victoryPanel.SetActive(true);
+                if (gameCompletePanel != null)
+                    gameCompletePanel.SetActive(true);
+            }
+            else
+            {
+                if (victoryPanel != null)
+                    victoryPanel.SetActive(true);
             }
         }
     }
