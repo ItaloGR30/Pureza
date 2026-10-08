@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageFinish
   victoryPanel: {fileID: 1586789359}
-  stageNumber: 1
+  stageNumber: 3
 --- !u!61 &285287739
 BoxCollider2D:
   m_ObjectHideFlags: 0
